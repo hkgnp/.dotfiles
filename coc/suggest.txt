@@ -1,0 +1,70 @@
+equalalways|equalalways|vimlsp
+configs|configs|go
+Map|Map{}|go
+func(|func(*fiber.Ctx) error|go
+v2|v2|go
+v|v2|go
+fi|fiber|go
+gofib|gofiber/|go
+main|main|go
+false|false|around
+C|Color|around
+json|json|around
+vim|vim|around
+newContent|newContentOne|tsserver-typescript
+preferre|preferredDateFormat|around
+two|newContentTwo|tsserver-typescript
+newConten|newContentOne|tsserver-typescript
+dotfiles|dotfiles|around
+Code|Code Projects|file
+|fish|file
+|coc|file
+|iterm2|file
+|skhd|file
+C|Code Projects|file
+sk|skhd|file
+|yabai|file
+dotfiles|dotfiles|file
+pref|preferredDateFormat|around
+getDate|getDateForPageWithoutBrackets|tsserver-typescript
+3|w-32|tailwindCSS
+2|w-24|tailwindCSS
+just|justify-end|tailwindCSS
+align|align-middle|tailwindCSS
+w-|w-24|tailwindCSS
+h-sc|h-screen|tailwindCSS
+toggleCluster|toggleClusterSupport|tsserver-typescript
+tailwindc|@tailwindcss/forms|tsserver-javascript
+import Dropdown|import Dropdown$1 from "./Dropdown";|tsserver-typescript
+|DropdownSelect|tsserver-typescript
+Dropdown|DropdownSelect|around
+Dropdw|DropdownSelect|buffer
+Drop|DropdownSelect|buffer
+import Toggle|import ToggleBtn$1 from "./ToggleBtn";|tsserver-typescript
+you|youAreHereIcon|tsserver-typescript
+Tooltip|Tooltip|tsserver-typescript
+Lat|LatLngExpression|tsserver-typescript
+LatLg|LatLngExpression|buffer
+LatLngExpression|LatLngExpression|buffer
+marker|markerObj|tsserver-typescript
+Marker|Marker|tsserver-typescript
+P|Popup|tsserver-typescript
+pane|paranthesis|around
+setYou|setYouAreHereMarker|around
+cat|catColorArr|tsserver-typescript
+catColor|catColorArr|tsserver-typescript
+import { insert|import { insertTasksFromTodoist$1 } from "./todoistFunction";|tsserver-typescript
+|withoutPrefixArr|tsserver-typescript
+insertTa|insertTasksFromTodoist|tsserver-typescript
+block|block|around
+open|openPopup|tsserver-typescript
+youA|youAreHereIcon|tsserver-typescript
+|pins|file
+re|resources|file
+@ts|@ts-ignore|typescript-directive
+h-f|h-full|tailwindCSS
+h-|h-96|tailwindCSS
+LatLngExpre|LatLngExpression|tsserver-typescript
+fly|flyToPostalCode|buffer
+flyTo|flyToPostalCode|tsserver-typescript
+flyTo|flyToPostalCode|around
