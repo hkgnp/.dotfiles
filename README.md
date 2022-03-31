@@ -13,9 +13,14 @@ List of dotfiles for MacOS Monterey. Dotfiles for:
 
 Following are needed for nvim to work happily:
 
-```
+```bash
 brew install ripgrep fd-find
+
+# or
+
 sudo dnf install ripgrep fd-find
+
+# then
 
 sudo npm install -g neovim tree-sitter
 
