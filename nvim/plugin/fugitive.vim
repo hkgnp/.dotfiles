@@ -1,4 +1,4 @@
 " Fugitive
 nnoremap <leader>gs :G<CR>
-nnoremap <leader>gc :G<Space>commit<CR>:sleep 2<CR>ggi
-nnoremap <leader>gp :q<CR>:sleep 2<CR>:G<Space>push<CR>:sleep 2<CR>:q<CR>
+nnoremap <leader>gc :q<CR>:Git<space>commit<CR>:sleep 2<CR>ki
+nnoremap <leader>gb :wq<CR>:Git<space>push<CR>:sleep 4<CR>

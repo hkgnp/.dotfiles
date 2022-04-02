@@ -17,7 +17,7 @@ set smartindent
 set nowrap
 set noswapfile
 set nobackup
-set undodir=~/.vim/undodir
+set undodir =~/.vim/undodir
 set undofile
 set incsearch
 set termguicolors
@@ -95,7 +95,7 @@ nnoremap <leader>x /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn
 
 noremap <leader>= :vertical resize +5<CR>
 nnoremap <leader>- :vertical resize -5<CR>
-nnoremap <leader>== <esc><C-w>=<CR>
+nnoremap <leader>== <C-w>=<CR>
 
 " New empty pane
 nnoremap <leader>v :vnew<CR>
@@ -105,7 +105,7 @@ nnoremap Y y$
 
 " Keeping it centered
 nnoremap n nzzzv
-nnoremap N Nzzzv
+nnoremap N Nzzzv 
 nnoremap J mzJ`z
 
 " Moving text
@@ -121,10 +121,10 @@ nnoremap <leader><S-b> :Ttoggle<CR>:sleep 2<CR>rmd<CR><C-\><C-n>:Ttoggle<CR>
 
 " Trying snippet
 iabbrev clog console.log()<Esc>ha
+iabbrev =() =()=>{}<esc>ha
 
 " Resize the current split to at least (90,25) but no more than (140,60)
 " or 2/3 of the available space otherwise.
-
 function Splitresize()
     let hmax = max([winwidth(0), float2nr(&columns*0.66), 90])
     let vmax = max([winheight(0), float2nr(&lines*0.66), 25])

@@ -1,3 +1,38 @@
+toolT|toolTipText|around
+toolTip|toolTipText|buffer
+tableHeader|tableHeader|around
+track|trackHabits|around
+importn|important|around
+impr|important|around
+trackHa|trackHabits|around
+EOF|EOF|around
+track|trackHabitsId|tsserver-javascript
+node|nodejs|around
+lorem|lorem|snippets
+lorem|ClipboardItem|tsserver-typescript
+|vscode-global-snippets|file
+head|headless-mermaid|tsserver-typescript
+headless|headless|buffer
+BlockU|BlockUUID|tsserver-typescript
+BlockEn|BlockEntity|tsserver-typescript
+kanbanId|kanbanId|tsserver-typescript
+|tasksIdArr|tsserver-typescript
+ta|tasksArr|tsserver-typescript
+settings|settings?|tsserver-typescript
+getsc|getScheduledDeadlineDateDayTime|tsserver-typescript
+import getDay|import { getDayInText$1 } from "logseq-dateutils";|tsserver-typescript
+getDay|getDayInText|tsserver-typescript
+get|getTasks|tsserver-typescript
+clog|clog|around
+iabbre|iabbrev|vimlsp
+|@ts-ignore|typescript-directive
+import {Task|import { Task$1 } from "../idTask";|tsserver-typescript
+projectId|projectIdWithPrefix|around
+getTasks|getTasks|tsserver-typescript
+import {getTa|import { getTasks$1 } from './handleTasks';|tsserver-typescript
+tasksId|tasksIdArr|around
+project|projectId|tsserver-typescript
+nvim|nvim|around
 equalalways|equalalways|vimlsp
 configs|configs|go
 Map|Map{}|go
