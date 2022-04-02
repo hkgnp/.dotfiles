@@ -51,14 +51,11 @@ Plug 'kassio/neoterm' " aka plugin/toggleterm
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'yaegassy/coc-tailwindcss',  {'do': 'npm install && npm run build', 'branch': 'feat/support-v3-and-use-server-pkg'}
+Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 call plug#end()
 
 "  airline theme
 let g:airline_theme='molokai'
-
-" Prettier
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
 
 " Color schemes
 if has('termguicolors')
@@ -70,7 +67,7 @@ let g:gruvbox_material_better_performance = 1
 colorscheme gruvbox-material
 
 " Source vim
-nnoremap <leader>rr :so ~/.config/nvim/init.vim<CR>
+nnoremap <leader>rr :so %<CR>
 
 " telescope
 nnoremap <leader>p <cmd>Telescope find_files<cr>
@@ -137,4 +134,3 @@ nnoremap <C-h> <C-w>h:call Splitresize()<CR>
 nnoremap <C-l> <C-w>l:call Splitresize()<CR>
 nnoremap <C-j> <C-w>j:call Splitresize()<CR>
 nnoremap <C-k> <C-w>k:call Splitresize()<CR>
-

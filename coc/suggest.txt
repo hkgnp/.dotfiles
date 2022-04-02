@@ -1,3 +1,54 @@
+HTMLInput|HTMLInputElement|tsserver-typescript
+c|const|tsserver-typescript
+useState|useState|tsserver-typescript
+hand|handleSearch|around
+placehold|placeholder?|tsserver-typescript
+font-extra|font-extrabold|tailwindCSS
+onClick|onClick?|tsserver-typescript
+unique|uniqueIdentifier|tsserver-typescript
+|uniqueIdentifier|tsserver-typescript
+unique|uniqueIdentifier|around
+React|import React$1 from "react";|tsserver-typescript
+Reac|React.Fragment|tsserver-typescript
+Fragment|Fragment|tsserver-typescript
+ca|Card.tsx|file
+orga|organisation|around
+resourceL|resourceList|buffer
+resourceContext|resourceContext|tsserver-typescript
+Resource|ResourceContext|tsserver-typescript
+useCon|useContext|tsserver-typescript
+resource|resourceContext|tsserver-typescript
+useContext|useContext|tsserver-typescript
+Resour|ResourceContext|tsserver-typescript
+Con|Context.tsx|file
+ResourceConte|ResourceContext|buffer
+ResourceConte|ResourceContenxt|buffer
+Br|BrowserRouter|tsserver-typescript
+import Map|import Map$1 from "./Map";|tsserver-typescript
+M|Maintain|tsserver-typescript
+Maintain|Maintain|buffer
+Map|Map|tsserver-typescript
+exac|exact?|tsserver-typescript
+import Reac|import React$1 from "react";|tsserver-typescript
+6|w-60|tailwindCSS
+w-20|w-20|tailwindcss-intellisense
+ites-ce|items-center|tailwindcss-intellisense
+|w-5/6|tailwindCSS
+expr|expresshbs-|snippets
+ext|"snippets.extends": {$1}|json
+getPage|getCurrentPageBlocksTree|tsserver-typescript
+eve|Event|tsserver-typescript
+HTMLIn|HTMLInputElement|tsserver-typescript
+test|test|buffer
+click|click|around
+addEvent|addEventListener|tsserver-typescript
+theFile|theFile2|around
+append|appendChild|tsserver-typescript
+onclick|onclick|tsserver-typescript
+settings|SettingSchemaDesc|tsserver-typescript
+|@ts-ignore|typescript-directive
+st|style|tsserver-typescript
+async|async function|snippets
 toolT|toolTipText|around
 toolTip|toolTipText|buffer
 tableHeader|tableHeader|around
@@ -25,7 +76,6 @@ getDay|getDayInText|tsserver-typescript
 get|getTasks|tsserver-typescript
 clog|clog|around
 iabbre|iabbrev|vimlsp
-|@ts-ignore|typescript-directive
 import {Task|import { Task$1 } from "../idTask";|tsserver-typescript
 projectId|projectIdWithPrefix|around
 getTasks|getTasks|tsserver-typescript
