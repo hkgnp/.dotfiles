@@ -48,7 +48,7 @@ yabai -m space 7 --label vnc
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  34.0
+yabai -m config top_padding                  0.0
 yabai -m config bottom_padding               0.0
 yabai -m config left_padding                 0.0
 yabai -m config right_padding                0.0
@@ -58,7 +58,7 @@ yabai -m rule --add app="^Spotify.*$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Calendar.*$" sticky=on layer=above manage=off
 
 for event in "mission_control_exit" "display_added" "display_removed" "display_moved"; do
-    yabai -m signal --add event=$event action="yabai -m config top_padding 0"
+    yabai -m signal --add event=$event action="yabai -m config top_padding 34"
 done
 
 echo "yabai configuration loaded.."
