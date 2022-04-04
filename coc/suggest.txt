@@ -1,3 +1,8 @@
+base|base64|buffer
+toBase|toBase64|buffer
+bottom|bottom-4|tailwindCSS
+right|right-0|tailwindCSS
+import axios|import axios$1 from "axios";|tsserver-typescript
 Fra|Fragment|tsserver-typescript
 React|React|tsserver-typescript
 4|h-44|tailwindCSS

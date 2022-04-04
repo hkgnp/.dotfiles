@@ -125,12 +125,12 @@ iabbrev =() =()=>{}<esc>ha
 function Splitresize()
     let hmax = max([winwidth(20), float2nr(&columns*0.66), 90])
     let vmax = max([winheight(0), float2nr(&lines*0.66), 25])
-    exe "vertical resize" . (20([hmax, 140]))
+    exe "vertical resize" . (min([hmax, 140]))
     exe "resize" . (min([vmax, 60]))
 endfunction
 
 " Move to pane
-nnoremap <C-h> <C-w>h:call Splitresize()<CR>
-nnoremap <C-l> <C-w>l:call Splitresize()<CR>
-nnoremap <C-j> <C-w>j:call Splitresize()<CR>
-nnoremap <C-k> <C-w>k:call Splitresize()<CR>
+nnoremap <C-h> <C-w>h:call Splitresize()<CR>^
+nnoremap <C-l> <C-w>l:call Splitresize()<CR>^
+nnoremap <C-j> <C-w>j:call Splitresize()<CR>^
+nnoremap <C-k> <C-w>k:call Splitresize()<CR>^
