@@ -1,4 +1,4 @@
-" Set map leader
+" pSet map leader
 let mapleader = " "
 set showcmd
 
@@ -8,8 +8,7 @@ set noshowmode
 set relativenumber
 set nu
 set nohlsearch
-set hidden
-set errorbells
+set hidden set errorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
@@ -36,13 +35,16 @@ set shortmess+=c
 
 " insert plugins
 call plug#begin('~/.vim/plugged')
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'sainnhe/gruvbox-material', {'as':'gruvbox'}
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'enricobacis/vim-airline-clock'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'tpope/vim-fugitive'
 Plug 'kyazdani42/nvim-web-devicons'
@@ -54,9 +56,6 @@ Plug 'yaegassy/coc-tailwindcss',  {'do': 'npm install && npm run build', 'branch
 Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 call plug#end()
 
-"  airline theme
-let g:airline_theme='molokai'
-
 " Color schemes
 if has('termguicolors')
     set termguicolors
@@ -67,10 +66,7 @@ let g:gruvbox_material_better_performance = 1
 colorscheme gruvbox-material
 
 " Source vim
-nnoremap <leader>rr :so %<CR>
-
-" telescope
-nnoremap <leader>p <cmd>Telescope find_files<cr>
+nnoremap <leader>rr :so ~/.config/nvim/init.vim<CR>
 
 " Save
 nnoremap ;; :wall<CR>
@@ -134,3 +130,19 @@ nnoremap <C-h> <C-w>h:call Splitresize()<CR>^
 nnoremap <C-l> <C-w>l:call Splitresize()<CR>^
 nnoremap <C-j> <C-w>j:call Splitresize()<CR>^
 nnoremap <C-k> <C-w>k:call Splitresize()<CR>^
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction

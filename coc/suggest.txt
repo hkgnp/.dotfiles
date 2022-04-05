@@ -1,3 +1,7 @@
+init|init.vim|file
+ChangeE|ChangeEvent|tsserver-typescript
+HTMLInput|HTMLInputElement|tsserver-typescript
+EventTar|EventTarget|tsserver-typescript
 base|base64|buffer
 toBase|toBase64|buffer
 bottom|bottom-4|tailwindCSS
@@ -31,7 +35,6 @@ leading-ti|leading-tight|tailwindCSS
 b|border-b-2|tailwindCSS
 useS|useState|tsserver-typescript
 filtere|filteredResources|tsserver-typescript
-HTMLInput|HTMLInputElement|tsserver-typescript
 c|const|tsserver-typescript
 hand|handleSearch|around
 placehold|placeholder?|tsserver-typescript
