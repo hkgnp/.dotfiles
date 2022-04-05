@@ -2,7 +2,7 @@ function cpdotfiles
     rsync -av ~/.config/nvim ~/Code\ Projects/dotfiles/
     rsync -av ~/.config/yabai ~/Code\ Projects/dotfiles/
     rsync -av ~/.config/skhd ~/Code\ Projects/dotfiles/
-    rsync -av --exclude "node_modules" --exclude "gopls" ~/.config/coc ~/Code\ Projects/dotfiles/
+    rsync -av --exclude "node_modules" --exclude "gopls" --max-size=1m ~/.config/coc ~/Code\ Projects/dotfiles/
     rsync -av ~/.config/iterm2 ~/Code\ Projects/dotfiles/
     rsync -av --exclude 'z.fish' --exclude '__z*.*' ~/.config/fish ~/Code\ Projects/dotfiles
     cd ~/Code\ Projects/dotfiles

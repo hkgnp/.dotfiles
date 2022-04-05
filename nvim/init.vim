@@ -8,7 +8,8 @@ set noshowmode
 set relativenumber
 set nu
 set nohlsearch
-set hidden set errorbells
+set hidden 
+set errorbells
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
