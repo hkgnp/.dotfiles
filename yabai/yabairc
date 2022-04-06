@@ -11,6 +11,8 @@
 # see this wiki page for information:
 #  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
 #
+
+ubersicht_spaces_refresh_command="osascript -e 'tell application id \"tracesOf.Uebersicht\" to refresh widget id \"simple-bar\"'"
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
@@ -48,7 +50,7 @@ yabai -m space 7 --label vnc
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  0.0
+# yabai -m config top_padding                  0.0
 yabai -m config bottom_padding               0.0
 yabai -m config left_padding                 0.0
 yabai -m config right_padding                0.0
@@ -57,8 +59,5 @@ yabai -m config window_gap                   0.0
 yabai -m rule --add app="^Spotify.*$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Calendar.*$" sticky=on layer=above manage=off
 
-for event in "mission_control_exit" "display_added" "display_removed" "display_moved"; do
-    yabai -m signal --add event=$event action="yabai -m config top_padding 34"
-done
-
+yabai -m signal --add event=display_changed action="yabai -m config top_padding 34"
 echo "yabai configuration loaded.."
