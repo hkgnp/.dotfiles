@@ -42,6 +42,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'dracula/vim',{'as':'dracula'}
 Plug 'sainnhe/gruvbox-material', {'as':'gruvbox'}
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -57,20 +58,22 @@ Plug 'yaegassy/coc-tailwindcss',  {'do': 'npm install && npm run build', 'branch
 Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 call plug#end()
 
-" Color schemes
+" Color schemes for gruvbox
 if has('termguicolors')
     set termguicolors
 endif        
 set background=dark
 let g:gruvbox_material_background = 'soft'
 let g:gruvbox_material_better_performance = 1
-colorscheme gruvbox-material
+
+" Set color scheme
+colorscheme tokyonight
 
 " Source vim
 nnoremap <leader>rr :so ~/.config/nvim/init.vim<CR>
 
 " Save
-nnoremap ;; :wall<CR>
+nnoremap ;; :wall<CR>:edit<CR>
 
 " Jump out of paranthesis
 inoremap <S-Tab> <esc>la
@@ -110,17 +113,17 @@ inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
-" Trying build
+" Logseq build
 nnoremap <leader><S-b> :Ttoggle<CR>:sleep 2<CR>rmd<CR><C-\><C-n>:Ttoggle<CR>
 
 " Trying snippet
 iabbrev clog console.log()<Esc>ha
-iabbrev =() =()=>{}<esc>ha
+iabbrev =() =()=>{}<esc>ha<CR>
 
 " Resize the current split to at least (90,25) but no more than (140,60)
 " or 2/3 of the available space otherwise.
 function Splitresize()
-    let hmax = max([winwidth(20), float2nr(&columns*0.66), 90])
+    let hmax = max([winwidth(20), float2nr(&columns*0.35), 80])
     let vmax = max([winheight(0), float2nr(&lines*0.66), 25])
     exe "vertical resize" . (min([hmax, 140]))
     exe "resize" . (min([vmax, 60]))
@@ -139,6 +142,7 @@ nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <leader>vrc <cmd>lua require('telescope.builtin').find_files({prompt_title="< VimRC >", cwd="~/.config/nvim"})<cr>
+nnoremap <leader>vcp <cmd>lua require('telescope.builtin').find_files({prompt_title="< Code Projects >", cwd="~/Code Projects"})<cr>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
