@@ -40,14 +40,14 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-Plug 'dracula/vim',{'as':'dracula'}
 Plug 'sainnhe/gruvbox-material', {'as':'gruvbox'}
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'p00f/nvim-ts-rainbow'
 Plug 'tpope/vim-fugitive'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
@@ -62,9 +62,9 @@ call plug#end()
 if has('termguicolors')
     set termguicolors
 endif        
-set background=dark
-let g:gruvbox_material_background = 'soft'
-let g:gruvbox_material_better_performance = 1
+"set background=dark
+"let g:gruvbox_material_background = 'soft'
+"let g:gruvbox_material_better_performance = 1
 
 " Set color scheme
 colorscheme tokyonight
@@ -123,7 +123,7 @@ iabbrev =() =()=>{}<esc>ha<CR>
 " Resize the current split to at least (90,25) but no more than (140,60)
 " or 2/3 of the available space otherwise.
 function Splitresize()
-    let hmax = max([winwidth(20), float2nr(&columns*0.35), 80])
+    let hmax = max([winwidth(20), float2nr(&columns*0.4), 60])
     let vmax = max([winheight(0), float2nr(&lines*0.66), 25])
     exe "vertical resize" . (min([hmax, 140]))
     exe "resize" . (min([vmax, 60]))
