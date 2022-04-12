@@ -50,7 +50,7 @@ yabai -m space 7 --label vnc
 
 # general space settings
 yabai -m config layout                       bsp
-# yabai -m config top_padding                  0.0
+yabai -m config top_padding                  0.0
 yabai -m config bottom_padding               0.0
 yabai -m config left_padding                 0.0
 yabai -m config right_padding                0.0
@@ -60,6 +60,6 @@ yabai -m rule --add app="^Spotify.*$" sticky=on layer=above manage=off
 yabai -m rule --add app="^Calendar.*$" sticky=on layer=above manage=off
 yabai -m rule --add app="^QuickTime*.*$" sticky=on layer=above manage=off
 
-yabai -m signal --add event=display_changed action="~/.set_padding.sh"
+yabai -m signal --add event=display_changed action="python3 ~/.config/yabai/padding.py"
 
 echo "yabai configuration loaded.."
