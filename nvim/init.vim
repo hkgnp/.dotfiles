@@ -56,7 +56,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'yaegassy/coc-tailwindcss',  {'do': 'npm install && npm run build', 'branch': 'feat/support-v3-and-use-server-pkg'}
 Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
+Plug 'spolu/dwm.vim'
 call plug#end()
+let g:dwm_map_keys = 0
 
 " Color schemes for gruvbox
 if has('termguicolors')
@@ -123,15 +125,15 @@ iabbrev =() =()=>{}<esc>ha<CR>
 " Resize the current split to at least (90,25) but no more than (140,60)
 " or 2/3 of the available space otherwise.
 function Splitresize()
-    let hmax = max([winwidth(20), float2nr(&columns*0.66), 80])
+    let hmax = max([winwidth(20), float2nr(&columns*0.66), 90])
     let vmax = max([winheight(0), float2nr(&lines*0.66), 25])
-    exe "vertical resize" . (min([hmax, 100]))
+    exe "vertical resize" . (min([hmax, 140]))
     exe "resize" . (min([vmax, 60]))
 endfunction
 
 " Move to pane
-nnoremap <C-h> <C-w>h:call Splitresize()<CR>^
-nnoremap <C-l> <C-w>l:call Splitresize()<CR>^
+nnoremap <C-h> <C-w>h:call DWM_Rotate(0)<CR>
+nnoremap <C-l> <C-w>l:call DWM_Rotate(1)<CR>
 nnoremap <C-j> <C-w>j:call Splitresize()<CR>^
 nnoremap <C-k> <C-w>k:call Splitresize()<CR>^
 
