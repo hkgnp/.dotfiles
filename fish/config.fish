@@ -17,6 +17,8 @@ alias lla "ll -A"
 alias g git
 alias rmd="rm -R dist && rm -R .parcel-cache && npm run build"
 command -qv nvim && alias vim nvim
+command -qv nvim && alias vi nvim
+command -qv nvim && alias v "nvim ."
 
 set -gx EDITOR nvim
 

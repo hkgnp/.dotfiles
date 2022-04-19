@@ -56,9 +56,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'yaegassy/coc-tailwindcss',  {'do': 'npm install && npm run build', 'branch': 'feat/support-v3-and-use-server-pkg'}
 Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
-Plug 'spolu/dwm.vim'
 call plug#end()
-let g:dwm_map_keys = 0
 
 " Color schemes for gruvbox
 if has('termguicolors')
@@ -132,8 +130,8 @@ function Splitresize()
 endfunction
 
 " Move to pane
-nnoremap <C-h> <C-w>h:call DWM_Rotate(0)<CR>
-nnoremap <C-l> <C-w>l:call DWM_Rotate(1)<CR>
+nnoremap <C-h> <C-w>h:call Splitresize()<CR>^
+nnoremap <C-l> <C-w>l:call Splitresize()<CR>^
 nnoremap <C-j> <C-w>j:call Splitresize()<CR>^
 nnoremap <C-k> <C-w>k:call Splitresize()<CR>^
 
