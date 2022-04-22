@@ -62,12 +62,13 @@ call plug#end()
 if has('termguicolors')
     set termguicolors
 endif        
-"set background=dark
-"let g:gruvbox_material_background = 'soft'
-"let g:gruvbox_material_better_performance = 1
+
+set background=dark
+let g:gruvbox_material_background = 'hard'
+let g:gruvbox_material_better_performance = 1
 
 " Set color scheme
-colorscheme tokyonight
+colorscheme gruvbox-material
 
 " Source vim
 nnoremap <leader>rr :so ~/.config/nvim/init.vim<CR>
@@ -151,3 +152,5 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
+ 
+nnoremap x "_dl
