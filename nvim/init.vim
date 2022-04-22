@@ -115,7 +115,7 @@ nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
 " Logseq build
-nnoremap <leader><S-b> :Ttoggle<CR>:sleep 2<CR>rmd<CR><C-\><C-n>:Ttoggle<CR>
+nnoremap <leader><S-b> :Ttoggle<CR>rmd<CR><C-\><C-n>:Ttoggle<CR>
 
 " Trying snippet
 iabbrev clog console.log()<Esc>ha
