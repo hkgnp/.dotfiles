@@ -7,5 +7,5 @@ filetype off
 let &runtimepath.=',~/.vim/plugged/neoterm'
 filetype plugin on
 
-nnoremap <C-n> :Ttoggle<CR>
-tnoremap <C-n> <C-\><C-n>:Ttoggle<CR><C-l><C-h>
+nnoremap <C-n> :Ttoggle<CR><C-h><C-l>
+tnoremap <C-n> <C-\><C-n>:Ttoggle<CR><C-h><C-h>

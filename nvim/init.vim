@@ -57,7 +57,21 @@ Plug 'tpope/vim-surround'
 Plug 'yaegassy/coc-tailwindcss',  {'do': 'npm install && npm run build', 'branch': 'feat/support-v3-and-use-server-pkg'}
 Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 Plug 'spolu/dwm.vim'
+Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
+
+lua << EOF
+vim.opt.list = true
+vim.opt.listchars:append("space:⋅")
+vim.opt.listchars:append("eol:↴")
+
+require("indent_blankline").setup {
+    use_treesitter = true,
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
+}
+EOF
 
 let g:dwm_map_keys = 0
 let g:dwm_master_pane_width = 120
@@ -125,7 +139,7 @@ nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
 " Logseq build
-nnoremap <leader><S-b> :Ttoggle<CR>rmd<CR><C-\><C-n>:Ttoggle<CR>
+nnoremap <leader><S-b> :Ttoggle<CR>rmd<CR><C-\><C-n>:Ttoggle<CR><C-l><C-h>
 
 " Trying snippet
 iabbrev clog console.log()<Esc>ha
