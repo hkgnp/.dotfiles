@@ -56,7 +56,11 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
 Plug 'yaegassy/coc-tailwindcss',  {'do': 'npm install && npm run build', 'branch': 'feat/support-v3-and-use-server-pkg'}
 Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
+Plug 'spolu/dwm.vim'
 call plug#end()
+
+let g:dwm_map_keys = 0
+let g:dwm_master_pane_width = 120
 
 " Color schemes for gruvbox
 if has('termguicolors')
@@ -64,8 +68,14 @@ if has('termguicolors')
 endif        
 
 set background=dark
+let g:gruvbox_material_palette = "mix"
 let g:gruvbox_material_background = 'hard'
 let g:gruvbox_material_better_performance = 1
+let g:gruvbox_material_enable_bold = 1
+let g:gruvbox_material_ui_contrast = 1
+let g:gruvbox_material_diagnostic_text_highlight = 1
+let g:gruvbox_material_diagnostic_line_highlight = 1
+let g:gruvbox_material_diagnostic_virtual_text = 1
 
 " Set color scheme
 colorscheme gruvbox-material
@@ -131,10 +141,15 @@ function Splitresize()
 endfunction
 
 " Move to pane
-nnoremap <C-h> <C-w>h:call Splitresize()<CR>^
-nnoremap <C-l> <C-w>l:call Splitresize()<CR>^
+" nnoremap <C-h> <C-w>h:call Splitresize()<CR>^
+" nnoremap <C-l> <C-w>l:call Splitresize()<CR>^
 nnoremap <C-j> <C-w>j:call Splitresize()<CR>^
 nnoremap <C-k> <C-w>k:call Splitresize()<CR>^
+
+nnoremap <silent> <C-h> :call DWM_Rotate(0)<CR>
+nnoremap <silent> <C-l> :call DWM_Rotate(1)<CR>
+
+nnoremap <silent> <C-f> :call DWM_Focus()<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
