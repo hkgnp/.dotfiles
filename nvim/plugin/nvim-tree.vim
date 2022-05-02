@@ -47,7 +47,7 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
-nnoremap <leader>t :NvimTreeToggle<CR>
+nnoremap <C-t> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
 nnoremap <leader>f :NvimTreeFocus<CR>
 " More available functions:

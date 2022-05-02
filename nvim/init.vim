@@ -26,6 +26,7 @@ set completeopt=menuone,noinsert,noselect
 set signcolumn=yes
 set colorcolumn=80
 set equalalways
+set autoread
 
 " Give more space for displaying messages:
 set cmdheight=2
@@ -58,12 +59,13 @@ Plug 'yaegassy/coc-tailwindcss',  {'do': 'npm install && npm run build', 'branch
 Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 Plug 'spolu/dwm.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
+
+lua require'colorizer'.setup()
 
 lua << EOF
 vim.opt.list = true
-vim.opt.listchars:append("space:⋅")
-vim.opt.listchars:append("eol:↴")
 
 require("indent_blankline").setup {
     use_treesitter = true,
@@ -98,7 +100,7 @@ colorscheme gruvbox-material
 nnoremap <leader>rr :so ~/.config/nvim/init.vim<CR>
 
 " Save
-nnoremap ;; :wall<CR>:edit<CR>
+nnoremap ;; :wall<CR>:e<CR>
 
 " Jump out of paranthesis
 inoremap <S-Tab> <esc>la
@@ -108,7 +110,7 @@ nnoremap H ^
 nnoremap L $
 
 " Quit
-nnoremap <leader>q :q<CR>
+nnoremap <leader>q :q<CR>:call DWM_Rotate(0)<CR>:call DWM_Rotate(1)<CR>
 nnoremap <leader><S-q> :qall<CR>
 
 " Replaces word under the cursor. First, change the word, then just press '.'
@@ -139,11 +141,12 @@ nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
 " Logseq build
-nnoremap <leader><S-b> :Ttoggle<CR>rmd<CR><C-\><C-n>:Ttoggle<CR><C-l><C-h>
+nnoremap <leader><S-b> :Ttoggle<CR>rmd<CR><C-\><C-n>:Ttoggle<CR>:call DWM_Rotate(0)<CR>:call DWM_Rotate(1)<CR>
 
 " Trying snippet
 iabbrev clog console.log()<Esc>ha
 iabbrev =() =()=>{}<esc>ha<CR>
+iabbrev dotenv require('dotenv').config()
 
 " Resize the current split to at least (90,25) but no more than (140,60)
 " or 2/3 of the available space otherwise.
@@ -162,8 +165,6 @@ nnoremap <C-k> <C-w>k:call Splitresize()<CR>^
 
 nnoremap <silent> <C-h> :call DWM_Rotate(0)<CR>
 nnoremap <silent> <C-l> :call DWM_Rotate(1)<CR>
-
-nnoremap <silent> <C-f> :call DWM_Focus()<CR>
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
