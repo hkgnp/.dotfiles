@@ -1,5 +1,6 @@
 {
   "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "coc.preferences.jumpCommand": "vsplit",
   "snippets.textmateSnippetsRoots": ["~/.config/nvim/vscode-global-snippets"],
   "python.pythonPath": "/usr/bin/python3",
   "snippets.extends": {

@@ -184,3 +184,4 @@ function! s:show_documentation()
 endfunction
  
 nnoremap x "_dl
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
