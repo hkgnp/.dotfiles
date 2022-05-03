@@ -1,4 +1,4 @@
-" pSet map leader
+" Set map leader to space
 let mapleader = " "
 set showcmd
 
@@ -62,48 +62,15 @@ Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
 call plug#end()
 
-lua require'colorizer'.setup()
-
-lua << EOF
-vim.opt.list = true
-
-require("indent_blankline").setup {
-    use_treesitter = true,
-    space_char_blankline = " ",
-    show_current_context = true,
-    show_current_context_start = true,
-}
-EOF
-
+" DWM
 let g:dwm_map_keys = 0
 let g:dwm_master_pane_width = 120
-
-" Color schemes for gruvbox
-if has('termguicolors')
-    set termguicolors
-endif        
-
-set background=dark
-let g:gruvbox_material_palette = "mix"
-let g:gruvbox_material_background = 'hard'
-let g:gruvbox_material_better_performance = 1
-let g:gruvbox_material_enable_bold = 1
-let g:gruvbox_material_ui_contrast = 1
-let g:gruvbox_material_diagnostic_text_highlight = 1
-let g:gruvbox_material_diagnostic_line_highlight = 1
-let g:gruvbox_material_diagnostic_virtual_text = 1
-
-" Set color scheme
-colorscheme gruvbox-material
 
 " Source vim
 nnoremap <leader>rr :so ~/.config/nvim/init.vim<CR>
 
 " Save
 nnoremap ;; :wall<CR>:e<CR>
-
-" Jump out of paranthesis
-inoremap <S-Tab> <esc>la
 
 " Move to beginning/end of line without taking my fingers off of home row:
 nnoremap H ^
@@ -113,13 +80,14 @@ nnoremap L $
 nnoremap <leader>q :q<CR>:call DWM_Rotate(0)<CR>:call DWM_Rotate(1)<CR>
 nnoremap <leader><S-q> :qall<CR>
 
-" Replaces word under the cursor. First, change the word, then just press '.'
-" to change subsequent words
+" Replaces word under the cursor. First, change the word, then just press '.' to change subsequent words
 nnoremap <leader>x /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn
 
-noremap <leader>= :vertical resize +5<CR>
-nnoremap <leader>- :vertical resize -5<CR>
-nnoremap <leader>== <C-w>=<CR>
+" Change x so it doesn't save deleted character to the history
+nnoremap x "_dl
+
+" Find and replace text in visual mode
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " New empty pane
 nnoremap <leader>v :vnew<CR>
@@ -143,38 +111,16 @@ nnoremap <leader>k :m .-2<CR>==
 " Logseq build
 nnoremap <leader><S-b> :Ttoggle<CR>rmd<CR><C-\><C-n>:Ttoggle<CR>:call DWM_Rotate(0)<CR>:call DWM_Rotate(1)<CR>
 
-" Trying snippet
-iabbrev clog console.log()<Esc>ha
-iabbrev =() =()=>{}<esc>ha<CR>
-iabbrev dotenv require('dotenv').config()
-
-" Resize the current split to at least (90,25) but no more than (140,60)
-" or 2/3 of the available space otherwise.
-function Splitresize()
-    let hmax = max([winwidth(20), float2nr(&columns*0.66), 90])
-    let vmax = max([winheight(0), float2nr(&lines*0.66), 25])
-    exe "vertical resize" . (min([hmax, 140]))
-    exe "resize" . (min([vmax, 60]))
-endfunction
-
-" Move to pane
-" nnoremap <C-h> <C-w>h:call Splitresize()<CR>^
-" nnoremap <C-l> <C-w>l:call Splitresize()<CR>^
-nnoremap <C-j> <C-w>j:call Splitresize()<CR>^
-nnoremap <C-k> <C-w>k:call Splitresize()<CR>^
-
-nnoremap <silent> <C-h> :call DWM_Rotate(0)<CR>
-nnoremap <silent> <C-l> :call DWM_Rotate(1)<CR>
-
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-nnoremap <silent> K :call <SID>show_documentation()<CR>
 nnoremap <leader>vrc <cmd>lua require('telescope.builtin').find_files({prompt_title="< VimRC >", cwd="~/.config/nvim"})<cr>
-nnoremap <leader>vcp <cmd>lua require('telescope.builtin').find_files({prompt_title="< Code Projects >", cwd="~/Code Projects"})<cr>
+nnoremap <leader>vcp <cmd>lua require('telescope.builtin').find_files({prompt_title="< Code Projects >", cwd="~/Code_Projects"})<cr>
 
+" Show documentation using K
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -183,5 +129,13 @@ function! s:show_documentation()
   endif
 endfunction
  
-nnoremap x "_dl
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)

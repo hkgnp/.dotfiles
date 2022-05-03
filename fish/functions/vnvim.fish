@@ -1,4 +1,3 @@
 function vnvim
-    cd ~/.config/nvim
-    v
+    vim ~/.config/nvim
 end
