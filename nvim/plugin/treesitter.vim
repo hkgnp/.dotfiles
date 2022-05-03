@@ -1,7 +1,7 @@
 lua << EOF
 require'nvim-treesitter.configs'.setup {
   -- One of "all", "maintained" (parsers with maintainers), or a list of languages
-  ensure_installed = "all",
+  ensure_installed = {"javascript","go","html","css","http","json","lua","python","scss","tsx","typescript","vim","yaml","vue"},
 
   -- Install languages synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -34,8 +34,7 @@ require'nvim-treesitter.configs'.setup {
     -- termcolors = {} -- table of colour name strings
   }
 }
-
-require("indent_blankline").setup {
+require"indent_blankline".setup {
     use_treesitter = true,
     space_char_blankline = " ",
     show_current_context = true,
