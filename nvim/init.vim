@@ -5,7 +5,7 @@ set showcmd
 " From the Primeagen
 set exrc
 set noshowmode
-set relativenumber
+set number relativenumber
 set nu
 set nohlsearch
 set hidden 
@@ -64,13 +64,13 @@ call plug#end()
 
 " DWM
 let g:dwm_map_keys = 0
-let g:dwm_master_pane_width = 120
+let g:dwm_master_pane_width = 110
 
 " Source vim
 nnoremap <leader>rr :so ~/.config/nvim/init.vim<CR>
 
 " Save
-nnoremap ;; :wall<CR>:e<CR>
+nnoremap ;; :u<CR>:wall<CR>:e<CR>
 
 " Move to beginning/end of line without taking my fingers off of home row:
 nnoremap H ^

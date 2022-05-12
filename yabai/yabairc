@@ -42,11 +42,11 @@ yabai -m config mouse_drop_action            swap
 # space labels
 yabai -m space 1 --label cal
 yabai -m space 2 --label chat
-yabai -m space 3 --label logseq
-yabai -m space 4 --label browser
-yabai -m space 5 --label code
-yabai -m space 6 --label finder
-yabai -m space 7 --label vnc
+yabai -m space 3 --label reading
+yabai -m space 4 --label logseq
+yabai -m space 5 --label browser
+yabai -m space 6 --label code
+yabai -m space 7 --label finder
 
 # general space settings
 yabai -m config layout                       bsp
@@ -56,10 +56,17 @@ yabai -m config left_padding                 10.0
 yabai -m config right_padding                10.0
 yabai -m config window_gap                   10.0 
 
-yabai -m rule --add app="^Spotify.*$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Calendar.*$" sticky=on layer=above manage=off
-yabai -m rule --add app="^QuickTime*.*$" sticky=on layer=above manage=off
-yabai -m rule --add app="^Zoom*.*$" sticky=on layer=above manage=off
+yabai -m rule --add app="^Spotify.*$" sticky=off layer=above manage=off
+yabai -m rule --add app="^Calendar.*$" sticky=off layer=above manage=off
+yabai -m rule --add app="^QuickTime*.*$" sticky=off layer=above manage=off
+yabai -m rule --add app="^Zoom*.*$" sticky=off layer=above manage=off
+
+yabai -m rule --add app="^Structured.*$" display=^1
+yabai -m rule --add app="^Discord.*$" display=^2
+yabai -m rule --add app="^Kindle.*$" display=^3
+yabai -m rule --add app="^Logseq.*$" display=^4
+yabai -m rule --add app="^Brave*.*$" display=^5
+yabai -m rule --add app="^iTerm.*$" display=^6
 
 yabai -m signal --add event=display_changed action="python3 ~/.config/yabai/padding.py"
 

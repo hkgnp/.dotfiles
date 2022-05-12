@@ -3,5 +3,10 @@
     "body": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
     "prefix": "lorem",
     "description": "Lorem ipsum (50 words)"
+  },
+  "Logseq call settings": {
+    "body": "import { SettingSchemaDesc } from \"@logseq/libs/dist/LSPlugin\";export const callSettings = () => {  const settings: SettingSchemaDesc[] = [    {      key: \"layer1\",      type: \"string\",      default: \"> Layer 1\",      description:        \"Specifies the name of the Layer 1 block that your highlights would go under. Supports markdown.\",      title: \"Name of Layer 1 block\",    },    {      key: \"layer1Highlights\",      type: \"enum\",      enumPicker: \"radio\",      enumChoices: [\"==Highlights==\", \"**Bold**\"],      default: \"**Bold**\",      description:        \"Indicate whether you use bold or highlights for your 1st layer.\",      title: \"Layer 1 Highlight Method\",    },  ];  logseq.useSettingsSchema(settings);};",
+    "prefix": "lscallsettings",
+    "description": "Insert settings snippet."
   }
 }
