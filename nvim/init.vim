@@ -70,7 +70,7 @@ let g:dwm_master_pane_width = 110
 nnoremap <leader>rr :so ~/.config/nvim/init.vim<CR>
 
 " Save
-nnoremap ;; :u<CR>:wall<CR>:e<CR>
+nnoremap ;; :update<CR>:wall<CR>:e<CR>
 
 " Move to beginning/end of line without taking my fingers off of home row:
 nnoremap H ^
