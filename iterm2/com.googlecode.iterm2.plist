@@ -543,8 +543,6 @@
 				<key>Red Component</key>
 				<real>0.0</real>
 			</dict>
-			<key>Background Image Location</key>
-			<string>/Users/ben/Pictures/Wallpapers/Anime/demon-slayer02.jpeg</string>
 			<key>Background Image Mode</key>
 			<integer>3</integer>
 			<key>Badge Color</key>
@@ -561,13 +559,13 @@
 				<real>1</real>
 			</dict>
 			<key>Blend</key>
-			<real>0.20639719202898549</real>
+			<real>0.050000000000000003</real>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
-			<true/>
+			<false/>
 			<key>Blur Radius</key>
-			<real>20.401562500000001</real>
+			<real>0.10000000000000001</real>
 			<key>Bold Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -1007,7 +1005,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.20620013297872339</real>
+			<real>0.2625332446808511</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>

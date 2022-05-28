@@ -17,12 +17,13 @@ set smartindent
 set nowrap
 set noswapfile
 set nobackup
+set nowritebackup
 set undodir =~/.vim/undodir
 set undofile
 set incsearch
 set termguicolors
 set scrolloff=12
-set completeopt=menuone,noinsert,noselect
+set completeopt=menu,menuone,noinsert,noselect
 set signcolumn=yes
 set colorcolumn=80
 set equalalways
@@ -34,7 +35,7 @@ set clipboard+=unnamedplus
 set cmdheight=2
 
 " Shorten update time
-set updatetime=50
+set updatetime=300
 set shortmess+=c
 
 " insert plugins
@@ -43,9 +44,15 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-frecency.nvim'
+Plug 'tami5/sqlite.lua'
 Plug 'sainnhe/gruvbox-material', {'as':'gruvbox'}
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'rebelot/kanagawa.nvim'
+Plug 'beikome/cosme.vim'
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'neovim/nvim-lspconfig'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
@@ -62,17 +69,28 @@ Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 Plug 'spolu/dwm.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
+
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/cmp-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 call plug#end()
 
 " DWM
 let g:dwm_map_keys = 0
 let g:dwm_master_pane_width = 110
 
+let g:vsnip_snippet_dir = expand('~/.config/vsnip')
+
 " Source vim
 nnoremap <leader>rr :so ~/.config/nvim/init.vim<CR>
 
 " Save
-nnoremap ;; :update<CR>:wall<CR>:e<CR>
+nnoremap ;; :w<CR>:e<CR>
 
 " Move to beginning/end of line without taking my fingers off of home row:
 nnoremap H ^
@@ -116,28 +134,8 @@ nnoremap <leader><S-b> :Ttoggle<CR>rmd<CR><C-\><C-n>:Ttoggle<CR>:call DWM_Rotate
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fw <cmd>Telescope grep_string<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 nnoremap <leader>vrc <cmd>lua require('telescope.builtin').find_files({prompt_title="< VimRC >", cwd="~/.config/nvim"})<cr>
 nnoremap <leader>vcp <cmd>lua require('telescope.builtin').find_files({prompt_title="< Code Projects >", cwd="~/Code_Projects"})<cr>
-
-" Show documentation using K
-nnoremap <silent> K :call <SID>show_documentation()<CR>
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nnoremap <silent> [g <Plug>(coc-diagnostic-prev)
-nnoremap <silent> ]g <Plug>(coc-diagnostic-next)
-
-" GoTo code navigation.
-nnoremap <silent> gd <Plug>(coc-definition)
-nnoremap <silent> gy <Plug>(coc-type-definition)
-nnoremap <silent> gi <Plug>(coc-implementation)
-nnoremap <silent> gr <Plug>(coc-references)
