@@ -23,5 +23,6 @@ xmap        S   <Plug>(vsnip-cut-text)
 
 " If you want to use snippet for multiple filetypes, you can `g:vsnip_filetypes` for it.
 let g:vsnip_filetypes = {}
-let g:vsnip_filetypes.javascriptreact = ['javascript']
+let g:vsnip_filetypes.javascriptreact = ['typescript']
 let g:vsnip_filetypes.typescriptreact = ['typescript']
+let g:vsnip_filetypes.javascript = ['typescript']

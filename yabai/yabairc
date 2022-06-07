@@ -43,18 +43,18 @@ yabai -m config mouse_drop_action            swap
 yabai -m space 1 --label chat
 yabai -m space 2 --label reading
 yabai -m space 3 --label productive
-yabai -m space 4 --label logseq
+yabai -m space 4 --label notes
 yabai -m space 5 --label browser
 yabai -m space 6 --label code
 yabai -m space 7 --label finder
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  0.0
-yabai -m config bottom_padding               0.0
-yabai -m config left_padding                 0.0
-yabai -m config right_padding                0.0
-yabai -m config window_gap                   0.0 
+yabai -m config top_padding                  7
+yabai -m config bottom_padding               7
+yabai -m config left_padding                 7
+yabai -m config right_padding                7
+yabai -m config window_gap                   5 
 
 yabai -m rule --add app="^Spotify.*$" sticky=off layer=above manage=off
 yabai -m rule --add app="^Calendar.*$" sticky=off layer=above manage=off

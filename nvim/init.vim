@@ -2,6 +2,8 @@
 let mapleader = " "
 set showcmd
 
+au CursorHold,CursorHoldI * checktime
+
 " From the Primeagen
 set exrc
 set noshowmode
@@ -90,7 +92,7 @@ let g:vsnip_snippet_dir = expand('~/.config/vsnip')
 nnoremap <leader>rr :so ~/.config/nvim/init.vim<CR>
 
 " Save
-nnoremap ;; <cmd>lua vim.lsp.buf.formatting()<CR>:w<CR>:e<CR>
+nnoremap ;; :wall<CR>:e<CR>:lua vim.lsp.buf.formatting()<CR>
 
 " Move to beginning/end of line without taking my fingers off of home row:
 nnoremap H ^

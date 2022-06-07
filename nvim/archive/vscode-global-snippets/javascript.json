@@ -1,0 +1,27 @@
+{
+  "expresshbs": {
+    "prefix": "expresshbs-",
+    "body": [
+      "const express = require('express');",
+      "const hbs = require('hbs');",
+      "const wax = require('wax-on');",
+      "const axios = require('axios');",
+      "",
+      "const app = express();",
+      "",
+      "// Set up HBS as view engine",
+      "app.set('view engine', 'hbs');",
+      "",
+      "// Set up static folder for styles, images, etc.",
+      "app.use(express.static('public'));",
+      "",
+      "// Wax on",
+      "wax.on(hbs.handlebars);",
+      "wax.setLayoutPath('./views/layouts');",
+      "",
+      "// Forms processing",
+      "app.use(express.urlencoded({ extended: false }));"
+    ],
+    "description": "Express with HBS, WAX-ON, AXIOS"
+  }
+}
