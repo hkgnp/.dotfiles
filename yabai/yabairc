@@ -41,10 +41,10 @@ yabai -m config mouse_drop_action            swap
 
 # space labels
 yabai -m space 1 --label chat
-yabai -m space 2 --label reading
-yabai -m space 3 --label productive
-yabai -m space 4 --label notes
-yabai -m space 5 --label browser
+yabai -m space 2 --label productive
+yabai -m space 3 --label notes
+yabai -m space 4 --label browser
+yabai -m space 5 --label misc
 yabai -m space 6 --label code
 yabai -m space 7 --label finder
 
@@ -62,11 +62,9 @@ yabai -m rule --add app="^QuickTime*.*$" sticky=off layer=above manage=off
 yabai -m rule --add app="^Zoom*.*$" sticky=off layer=above manage=off
 
 yabai -m rule --add app="^Discord.*$" display=^1
-yabai -m rule --add app="^Kindle.*$" display=^2
-yabai -m rule --add app="^Structured.*$" display=^3
-yabai -m rule --add app="^Todoist.*$" display=^3
-yabai -m rule --add app="^Logseq.*$" display=^4
-yabai -m rule --add app="^Brave*.*$" display=^5
+yabai -m rule --add app="^Things.*$" display=^3
+yabai -m rule --add app="^Evernote.*$" display=^4
+yabai -m rule --add app="^Brave*.*$" display=^4
 yabai -m rule --add app="^iTerm.*$" display=^6
 
 yabai -m signal --add event=display_changed action="python3 ~/.config/yabai/padding.py"

@@ -6,8 +6,8 @@ output_obj = eval(output_text)
 width = (output_obj[0]["frame"]["w"])
 
 if width == 1920.0:
-    subprocess.run(["yabai","-m","config","top_padding","34"])
-    print("Padding set to 34")
+    subprocess.run(["yabai","-m","config","top_padding","41"])
+    print("Padding set to 41")
 else:
-    subprocess.run(["yabai","-m","config","top_padding","0"])
-    print("Padding set to 0")
+    subprocess.run(["yabai","-m","config","top_padding","7"])
+    print("Padding set to 7")
