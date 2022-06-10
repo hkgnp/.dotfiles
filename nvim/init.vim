@@ -16,7 +16,6 @@ set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set nowrap
 set noswapfile
 set nobackup
 set nowritebackup
@@ -30,6 +29,7 @@ set signcolumn=yes
 set colorcolumn=80
 set equalalways
 set autoread
+
 " Combines vim and system clipboard
 set clipboard+=unnamedplus
 
@@ -44,17 +44,25 @@ set shortmess+=c
 call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+
+" telescope
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope-frecency.nvim'
 Plug 'tami5/sqlite.lua'
+
+" themes
 Plug 'sainnhe/gruvbox-material', {'as':'gruvbox'}
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'rebelot/kanagawa.nvim'
 Plug 'beikome/cosme.vim'
+
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
+Plug 'jose-elias-alvarez/null-ls.nvim'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'enricobacis/vim-airline-clock'
@@ -66,8 +74,8 @@ Plug 'kyazdani42/nvim-tree.lua'
 Plug 'kassio/neoterm' " aka plugin/toggleterm
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-surround'
-Plug 'yaegassy/coc-tailwindcss',  {'do': 'npm install && npm run build', 'branch': 'feat/support-v3-and-use-server-pkg'}
-Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
+" Plug 'yaegassy/coc-tailwindcss',  {'do': 'npm install && npm run build', 'branch': 'feat/support-v3-and-use-server-pkg'}
+" Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
 Plug 'spolu/dwm.vim'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'norcalli/nvim-colorizer.lua'
@@ -89,10 +97,10 @@ let g:dwm_master_pane_width = 110
 let g:vsnip_snippet_dir = expand('~/.config/vsnip')
 
 " Source vim
-nnoremap <leader>rr :so ~/.config/nvim/init.vim<CR>
+nnoremap <leader>rr :so %<CR>
 
 " Save
-nnoremap ;; :wall<CR>:e<CR>:lua vim.lsp.buf.formatting()<CR>
+nnoremap ;; :w<CR>:wall<CR>:e<CR>
 
 " Move to beginning/end of line without taking my fingers off of home row:
 nnoremap H ^
