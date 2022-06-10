@@ -1,0 +1,53 @@
+{
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "coc.preferences.jumpCommand": "vsplit",
+  "snippets.textmateSnippetsRoots": ["~/.config/nvim/vscode-global-snippets"],
+  "python.pythonPath": "/usr/bin/python3",
+  "snippets.extends": {
+    "typescript": ["javascript"],
+    "typescriptreact": ["javascripreact"]
+  },
+  "tailwindCSS.cssLanguages": [
+    "css",
+    "less",
+    "postcss",
+    "sass",
+    "scss",
+    "stylus",
+    "vue"
+  ],
+  "tailwindCSS.jsLanguages": [
+    "javascript",
+    "javascriptreact",
+    "reason",
+    "typescriptreact"
+  ],
+  "tailwindCSS.htmlLanguages": [
+    "blade",
+    "edge",
+    "eelixir",
+    "ejs",
+    "elixir",
+    "elm",
+    "erb",
+    "eruby",
+    "haml",
+    "handlebars",
+    "htmldjango",
+    "html",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "html.twig",
+    "jade",
+    "leaf",
+    "markdown",
+    "njk",
+    "nunjucks",
+    "php",
+    "razor",
+    "slim",
+    "svelte",
+    "twig",
+    "vue"
+  ]
+}

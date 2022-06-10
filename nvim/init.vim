@@ -2,6 +2,7 @@
 let mapleader = " "
 set showcmd
 
+" Check for changes to file (https://stackoverflow.com/a/927634/14728340)
 au CursorHold,CursorHoldI * checktime
 
 " From the Primeagen
@@ -37,13 +38,16 @@ set clipboard+=unnamedplus
 set cmdheight=2
 
 " Shorten update time
-set updatetime=300
+set updatetime=100
 set shortmess+=c
 
 " insert plugins
 call plug#begin('~/.vim/plugged')
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
+
+" treesitter
+Plug 'nvim-treesitter/nvim-treesitter'
 
 " telescope
 Plug 'nvim-telescope/telescope.nvim'
@@ -59,27 +63,12 @@ Plug 'beikome/cosme.vim'
 
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+" nvim LSP stuff
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'neovim/nvim-lspconfig'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'enricobacis/vim-airline-clock'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'p00f/nvim-ts-rainbow'
-Plug 'tpope/vim-fugitive'
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'kassio/neoterm' " aka plugin/toggleterm
-Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-" Plug 'yaegassy/coc-tailwindcss',  {'do': 'npm install && npm run build', 'branch': 'feat/support-v3-and-use-server-pkg'}
-" Plug 'neoclide/npm.nvim', {'do' : 'npm install'}
-Plug 'spolu/dwm.vim'
-Plug 'lukas-reineke/indent-blankline.nvim'
-Plug 'norcalli/nvim-colorizer.lua'
-
+" completion for nvim-lsp
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
@@ -88,7 +77,32 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
+
+" airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'enricobacis/vim-airline-clock'
+
+Plug 'tpope/vim-fugitive'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
+
+" toggle terminal
+Plug 'kassio/neoterm' " aka plugin/toggleterm
+
+Plug 'spolu/dwm.vim'
+
+" code vertical lines
+Plug 'lukas-reineke/indent-blankline.nvim'
+
+" autopairs
+Plug 'windwp/nvim-autopairs'
 call plug#end()
+
+" call auto pairs
+lua << EOF
+require("nvim-autopairs").setup {}
+EOF
 
 " DWM
 let g:dwm_map_keys = 0
