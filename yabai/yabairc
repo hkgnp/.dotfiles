@@ -46,7 +46,8 @@ yabai -m space 3 --label notes
 yabai -m space 4 --label browser
 yabai -m space 5 --label misc
 yabai -m space 6 --label code
-yabai -m space 7 --label finder
+yabai -m space 7 --label research
+yabai -m space 8 --label finder
 
 # general space settings
 yabai -m config layout                       bsp
@@ -62,10 +63,11 @@ yabai -m rule --add app="^QuickTime*.*$" sticky=off layer=above manage=off
 yabai -m rule --add app="^Zoom*.*$" sticky=off layer=above manage=off
 
 yabai -m rule --add app="^Discord.*$" display=^1
-yabai -m rule --add app="^Things.*$" display=^3
-yabai -m rule --add app="^Evernote.*$" display=^4
+yabai -m rule --add app="^Things.*$" display=^2
+yabai -m rule --add app="^Evernote.*$" display=^3
 yabai -m rule --add app="^Brave*.*$" display=^4
 yabai -m rule --add app="^iTerm.*$" display=^6
+yabai -m rule --add app="^Logseq.*$" display=^7
 
 yabai -m signal --add event=display_changed action="python3 ~/.config/yabai/padding.py"
 

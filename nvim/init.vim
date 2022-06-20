@@ -114,7 +114,7 @@ let g:vsnip_snippet_dir = expand('~/.config/vsnip')
 nnoremap <leader>rr :so %<CR>
 
 " Save
-nnoremap ;; :w<CR>:wall<CR>:e<CR>
+" nnoremap ;; :wall<CR>:e<CR>
 
 " Move to beginning/end of line without taking my fingers off of home row:
 nnoremap H ^
