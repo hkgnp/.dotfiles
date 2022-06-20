@@ -122,7 +122,7 @@ require'nvim-tree'.setup { -- BEGIN_DEFAULT_OPTS
   filters = {
     dotfiles = false,
     custom = {},
-    exclude = {},
+    exclude = {".DS_Store"},
   },
   git = {
     enable = true,

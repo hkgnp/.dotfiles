@@ -157,6 +157,7 @@ nnoremap <leader><S-b> :Ttoggle<CR>rmd<CR><C-\><C-n>:Ttoggle<CR>:call DWM_Rotate
 
 " Find files using Telescope command-line sugar.
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fr <cmd>Telescope frecency<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fw <cmd>Telescope grep_string<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
