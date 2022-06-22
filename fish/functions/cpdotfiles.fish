@@ -1,5 +1,4 @@
 function cpdotfiles
-    find ~/.config/ -name '.DS_Store' -type f -delete -print
     rsync -av --exclude ".DS_Store" ~/.config/nvim ~/Code_Projects/dotfiles/
     rsync -av --exclude ".pyc" ~/.config/yabai ~/Code_Projects/dotfiles/
     rsync -av --exclude ".DS_Store" ~/.config/skhd ~/Code_Projects/dotfiles/
